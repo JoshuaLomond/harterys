@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Menu() {
   return (
     <div id="menu" className="bg-secondary py-24 sm:py-32">
@@ -13,9 +15,11 @@ export default function Menu() {
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           <article className="flex flex-col items-start justify-between group">
             <div className="relative w-full">
-              <img
+              <Image
                 src="/food/breakfast.jpg"
-                alt=""
+                alt="Breakfast"
+                width={500}
+                height={500}
                 className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2] transition-transform duration-300 ease-in-out group-hover:scale-105"
               />
               <div className="absolute inset-0 rounded-2xl" />
@@ -23,9 +27,11 @@ export default function Menu() {
           </article>
           <article className="flex flex-col items-start justify-between group">
             <div className="relative w-full">
-              <img
+              <Image
                 src="/food/cold.jpg"
-                alt=""
+                alt="Cold Plate"
+                width={500}
+                height={500}
                 className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2] transition-transform duration-300 ease-in-out group-hover:scale-105"
               />
               <div className="absolute inset-0 rounded-2xl" />
@@ -33,9 +39,11 @@ export default function Menu() {
           </article>
           <article className="flex flex-col items-start justify-between group">
             <div className="relative w-full">
-              <img
+              <Image
                 src="/food/wings.jpg"
-                alt=""
+                alt="Wings"
+                width={500}
+                height={500}
                 className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2] transition-transform duration-300 ease-in-out group-hover:scale-105"
               />
               <div className="absolute inset-0 rounded-2xl" />
