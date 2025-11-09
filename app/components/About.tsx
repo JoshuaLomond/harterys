@@ -7,9 +7,18 @@ export default function About() {
             About Us
           </h2>
           <p className="mt-6 text-lg leading-8 text-dark-charcoal">
-            We are a family-owned restaurant that has been serving our community
-            for over 50 years. We are passionate about using fresh, local
-            ingredients to create delicious and memorable meals.
+            Hartery&apos;s has been a beloved establishment in Stephenville
+            since the 1950s, serving as a &apos;home away from home&apos; for
+            Americans stationed at the Ernest Harmon Air Force base. Opened and
+            owned by Clayton Moraze, it temporarily closed in August 2023 upon
+            his retirement, only to be joyfully reopened by Duane Lomond in
+            September of the same year.
+          </p>
+          <p className="mt-6 text-lg leading-8 text-dark-charcoal">
+            Today, Hartery&apos;s continues its legacy as a family-owned,
+            family-style restaurant, proudly serving classic home-style dishes
+            and traditional Newfoundland cuisine with a great staff and a
+            passionate owner.
           </p>
         </div>
       </div>
