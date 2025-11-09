@@ -30,7 +30,7 @@ export default function Hero() {
               href="#contact"
               className="text-sm font-semibold leading-6 transition-transform hover:scale-105 inline-block"
             >
-              Book a table <span aria-hidden="true">→</span>
+              Get in Touch <span aria-hidden="true">→</span>
             </a>
           </ScrollAnimation>
         </div>
