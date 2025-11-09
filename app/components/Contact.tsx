@@ -1,3 +1,5 @@
+import { FaPhone, FaMapMarkerAlt, FaFacebook } from "react-icons/fa";
+
 export default function Contact() {
   return (
     <div id="contact" className="bg-secondary py-24 sm:py-32">
@@ -7,21 +9,25 @@ export default function Contact() {
             Contact Us
           </h2>
           <p className="mt-6 text-lg leading-8 text-dark-charcoal">
-            We would love to hear from you.
+            Give us a call to make a reservation. We would love to hear from
+            you!
           </p>
-          <div className="mt-10">
-            <p className="text-lg leading-8 text-dark-charcoal">
+          <div className="mt-10 space-y-4">
+            <p className="text-lg leading-8 text-dark-charcoal flex items-center justify-center gap-2">
+              <FaMapMarkerAlt className="text-primary" />
               109 Main Street, Stephenville, NL A2N1J4
             </p>
-            <p className="text-lg leading-8 text-dark-charcoal">
+            <p className="text-lg leading-8 text-dark-charcoal flex items-center justify-center gap-2">
+              <FaPhone className="text-primary" />
               (709) 643-6282
             </p>
-            <p className="text-lg leading-8 text-dark-charcoal">
+            <p className="text-lg leading-8 text-dark-charcoal flex items-center justify-center gap-2">
+              <FaFacebook className="text-primary" />
               <a
                 href="https://www.facebook.com/harterysfamilyrestaurant/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:text-primary/80"
+                className="text-primary hover:text-primary/80 transition-transform hover:scale-105"
               >
                 Hartery's Facebook
               </a>

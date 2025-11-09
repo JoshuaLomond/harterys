@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="pb-6">
             <a
               href="#menu"
-              className="text-sm leading-6 text-dark-charcoal hover:text-dark-charcoal/80"
+              className="text-sm leading-6 text-dark-charcoal hover:text-dark-charcoal/80 transition-transform hover:scale-105 inline-block"
             >
               Menu
             </a>
@@ -17,7 +17,7 @@ export default function Footer() {
           <div className="pb-6">
             <a
               href="#about"
-              className="text-sm leading-6 text-dark-charcoal hover:text-dark-charcoal/80"
+              className="text-sm leading-6 text-dark-charcoal hover:text-dark-charcoal/80 transition-transform hover:scale-105 inline-block"
             >
               About
             </a>
@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="pb-6">
             <a
               href="#contact"
-              className="text-sm leading-6 text-dark-charcoal hover:text-dark-charcoal/80"
+              className="text-sm leading-6 text-dark-charcoal hover:text-dark-charcoal/80 transition-transform hover:scale-105 inline-block"
             >
               Contact
             </a>
@@ -37,7 +37,7 @@ export default function Footer() {
             href="https://joshlomond.dev/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary hover:text-primary/80"
+            className="text-primary hover:text-primary/80 transition-transform hover:scale-105 inline-block"
           >
             Joshua Lomond
           </a>

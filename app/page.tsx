@@ -4,6 +4,7 @@ import Menu from "./components/Menu";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ScrollAnimation from "./components/ScrollAnimation";
 
 export default function Home() {
   return (
@@ -11,9 +12,15 @@ export default function Home() {
       <Header />
       <main className="isolate">
         <Hero />
-        <Menu />
-        <About />
-        <Contact />
+        <ScrollAnimation>
+          <Menu />
+        </ScrollAnimation>
+        <ScrollAnimation>
+          <About />
+        </ScrollAnimation>
+        <ScrollAnimation>
+          <Contact />
+        </ScrollAnimation>
       </main>
       <Footer />
     </div>
