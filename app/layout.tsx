@@ -3,6 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Playfair_Display, Lato } from "next/font/google";
 import "./globals.css";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({
         className={`${playfairDisplay.variable} ${lato.variable} font-sans antialiased`}
       >
         {children}
+        <ScrollToTopButton />
         <Analytics />
         <SpeedInsights />
       </body>
