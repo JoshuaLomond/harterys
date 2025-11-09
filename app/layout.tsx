@@ -1,16 +1,18 @@
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Playfair_Display, Lato } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
+  variable: "--font-playfair-display",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const lato = Lato({
   subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-lato",
 });
 
 export const metadata: Metadata = {
@@ -26,10 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${playfairDisplay.variable} ${lato.variable} font-sans antialiased`}
       >
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
