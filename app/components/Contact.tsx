@@ -12,10 +12,18 @@ export default function Contact() {
             Give us a call to make a reservation. We would love to hear from
             you!
           </p>
+          {/* Contact Information */}
           <div className="mt-10 space-y-4">
             <p className="text-lg leading-8 text-dark-charcoal flex items-center justify-center gap-2">
               <FaMapMarkerAlt className="text-primary" />
-              109 Main Street, Stephenville
+              <a
+                href="https://maps.app.goo.gl/3f85xCmit8WJVfoY6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary/80 transition-transform hover:scale-105"
+              >
+                109 Main Street, Stephenville
+              </a>
             </p>
             <p className="text-lg leading-8 text-dark-charcoal flex items-center justify-center gap-2">
               <FaPhone className="text-primary" />
