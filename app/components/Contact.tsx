@@ -15,7 +15,7 @@ export default function Contact() {
           <div className="mt-10 space-y-4">
             <p className="text-lg leading-8 text-dark-charcoal flex items-center justify-center gap-2">
               <FaMapMarkerAlt className="text-primary" />
-              109 Main Street, Stephenville, NL A2N1J4
+              109 Main Street, Stephenville
             </p>
             <p className="text-lg leading-8 text-dark-charcoal flex items-center justify-center gap-2">
               <FaPhone className="text-primary" />
