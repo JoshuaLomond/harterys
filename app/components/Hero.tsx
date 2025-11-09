@@ -9,10 +9,11 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold tracking-tight sm:text-6xl font-serif">
-          Welcome to Hartery's
+          Welcome to Hartery&apos;s
         </h1>
-        <p className="mt-6 text-lg leading-8">
-          A family-owned restaurant serving delicious food for generations.
+        <p className="mt-8 text-lg leading-8">
+          A family-owned restaurant in Stephenville, NL. Proudly serving
+          traditional Newfie meals alongside classic home-style dishes.
         </p>
 
         <div className="mt-10 flex items-center justify-center gap-x-6">

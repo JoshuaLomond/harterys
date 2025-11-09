@@ -29,7 +29,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="text-primary hover:text-primary/80 transition-transform hover:scale-105"
               >
-                Hartery's Facebook
+                Hartery&apos;s Facebook
               </a>
             </p>
             <p className="text-lg leading-8 text-dark-charcoal flex items-center justify-center gap-2">

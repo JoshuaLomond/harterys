@@ -26,7 +26,7 @@ export default function Footer() {
           </a>
         </nav>
         <p className="mt-10 text-center text-xs leading-5 text-dark-charcoal">
-          &copy; 2025 Hartery's. All rights reserved. Developed by{" "}
+          &copy; 2025 Hartery&apos;s. All rights reserved. Developed by{" "}
           <a
             href="https://joshlomond.dev/"
             target="_blank"
