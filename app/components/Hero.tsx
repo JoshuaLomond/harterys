@@ -5,7 +5,7 @@ export default function Hero() {
       style={{ backgroundImage: "url('/hero-background.jpg')" }}
     >
       <div className="absolute inset-0 bg-black opacity-50"></div>
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold tracking-tight sm:text-6xl font-serif">
           Welcome to Hartery's
         </h1>

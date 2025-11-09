@@ -26,16 +26,15 @@ export default function Footer() {
           </a>
         </nav>
         <p className="mt-10 text-center text-xs leading-5 text-dark-charcoal">
-          &copy; 2025 Hartery's. Developed by{" "}
+          &copy; 2025 Hartery's. All rights reserved. Developed by{" "}
           <a
             href="https://joshlomond.dev/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary hover:text-primary/80 transition-transform hover:scale-105"
+            className="text-primary hover:text-primary/80 transition-transform hover:scale-105 inline-block"
           >
-            Joshua Lomond
+            Joshua Lomond.
           </a>
-          . All rights reserved.
         </p>
       </div>
     </footer>
