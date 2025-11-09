@@ -1,4 +1,4 @@
-import { FaPhone, FaMapMarkerAlt, FaFacebook } from "react-icons/fa";
+import { FaPhone, FaMapMarkerAlt, FaFacebook, FaClock } from "react-icons/fa";
 
 export default function Contact() {
   return (
@@ -31,6 +31,10 @@ export default function Contact() {
               >
                 Hartery's Facebook
               </a>
+            </p>
+            <p className="text-lg leading-8 text-dark-charcoal flex items-center justify-center gap-2">
+              <FaClock className="text-primary" />
+              8:00 AM - 7:00 PM Everyday
             </p>
           </div>
         </div>

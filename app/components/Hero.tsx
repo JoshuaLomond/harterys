@@ -1,3 +1,5 @@
+import ScrollAnimation from "./ScrollAnimation";
+
 export default function Hero() {
   return (
     <div
@@ -12,19 +14,24 @@ export default function Hero() {
         <p className="mt-6 text-lg leading-8">
           A family-owned restaurant serving delicious food for generations.
         </p>
+
         <div className="mt-10 flex items-center justify-center gap-x-6">
-          <a
-            href="#menu"
-            className="rounded-md bg-primary px-3-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-transform hover:scale-105"
-          >
-            View Menu
-          </a>
-          <a
-            href="#contact"
-            className="text-sm font-semibold leading-6 transition-transform hover:scale-105"
-          >
-            Book a table <span aria-hidden="true">→</span>
-          </a>
+          <ScrollAnimation>
+            <a
+              href="#menu"
+              className="rounded-md bg-primary px-3-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-transform hover:scale-105 inline-block"
+            >
+              View Menu
+            </a>
+          </ScrollAnimation>
+          <ScrollAnimation>
+            <a
+              href="#contact"
+              className="text-sm font-semibold leading-6 transition-transform hover:scale-105 inline-block"
+            >
+              Book a table <span aria-hidden="true">→</span>
+            </a>
+          </ScrollAnimation>
         </div>
       </div>
     </div>
