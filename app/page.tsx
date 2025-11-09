@@ -1,31 +1,47 @@
+"use client";
+
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrolled]);
+
   return (
     <div className="bg-white">
       {/* Header */}
-      <header className="absolute inset-x-0 top-0 z-50">
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+          scrolled
+            ? "bg-white shadow-md text-gray-900"
+            : "bg-transparent text-white"
+        }`}
+      >
         <nav
           className="flex items-center justify-start p-6 lg:px-8"
           aria-label="Global"
         >
           <div className="hidden lg:flex lg:gap-x-12 mx-auto">
-            <a
-              href="#menu"
-              className="text-sm font-semibold leading-6 text-gray-900"
-            >
+            <a href="#menu" className="text-sm font-semibold leading-6">
               Menu
             </a>
-            <a
-              href="#about"
-              className="text-sm font-semibold leading-6 text-gray-900"
-            >
+            <a href="#about" className="text-sm font-semibold leading-6">
               About
             </a>
-            <a
-              href="#contact"
-              className="text-sm font-semibold leading-6 text-gray-900"
-            >
+            <a href="#contact" className="text-sm font-semibold leading-6">
               Contact
             </a>
           </div>
@@ -34,44 +50,28 @@ export default function Home() {
 
       <main className="isolate">
         {/* Hero section */}
-        <div className="relative pt-14">
-          <div
-            className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-            aria-hidden="true"
-          >
-            <div
-              className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-              style={{
-                clipPath:
-                  "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-              }}
-            />
-          </div>
-          <div className="py-24 sm:py-32">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <div className="mx-auto max-w-2xl text-center">
-                <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                  Welcome to Hartery's
-                </h1>
-                <p className="mt-6 text-lg leading-8 text-gray-600">
-                  A family-owned restaurant serving delicious food for
-                  generations.
-                </p>
-                <div className="mt-10 flex items-center justify-center gap-x-6">
-                  <a
-                    href="#menu"
-                    className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                  >
-                    View Menu
-                  </a>
-                  <a
-                    href="#contact"
-                    className="text-sm font-semibold leading-6 text-gray-900"
-                  >
-                    Book a table <span aria-hidden="true">→</span>
-                  </a>
-                </div>
-              </div>
+        <div
+          className="relative h-screen bg-cover bg-center"
+          style={{ backgroundImage: "url('/hero-background.jpg')" }}
+        >
+          <div className="absolute inset-0 bg-black opacity-50"></div>
+          <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
+              Welcome to Hartery's
+            </h1>
+            <p className="mt-6 text-lg leading-8">
+              A family-owned restaurant serving delicious food for generations.
+            </p>
+            <div className="mt-10 flex items-center justify-center gap-x-6">
+              <a
+                href="#menu"
+                className="rounded-md bg-indigo-600 px-3-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                View Menu
+              </a>
+              <a href="#contact" className="text-sm font-semibold leading-6">
+                Book a table <span aria-hidden="true">→</span>
+              </a>
             </div>
           </div>
         </div>
@@ -88,12 +88,12 @@ export default function Home() {
               </p>
             </div>
             <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-              <article className="flex flex-col items-start justify-between">
+              <article className="flex flex-col items-start justify-between group">
                 <div className="relative w-full">
                   <img
                     src="/placeholder.png"
                     alt=""
-                    className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                    className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2] transition-transform duration-300 ease-in-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
                 </div>
@@ -111,12 +111,12 @@ export default function Home() {
                   </div>
                 </div>
               </article>
-              <article className="flex flex-col items-start justify-between">
+              <article className="flex flex-col items-start justify-between group">
                 <div className="relative w-full">
                   <img
                     src="/placeholder.png"
                     alt=""
-                    className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                    className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2] transition-transform duration-300 ease-in-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
                 </div>
@@ -134,12 +134,12 @@ export default function Home() {
                   </div>
                 </div>
               </article>
-              <article className="flex flex-col items-start justify-between">
+              <article className="flex flex-col items-start justify-between group">
                 <div className="relative w-full">
                   <img
                     src="/placeholder.png"
                     alt=""
-                    className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                    className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2] transition-transform duration-300 ease-in-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
                 </div>
@@ -189,7 +189,7 @@ export default function Home() {
                 We would love to hear from you.
               </p>
               <div className="mt-10">
-                <p className="text-lg leading-8 text-gray-600">
+                <p className="text-lg leading-8 text-gray-60.0">
                   109 Main Street, Stephenville, NL A2N1J4
                 </p>
                 <p className="text-lg leading-8 text-gray-600">
