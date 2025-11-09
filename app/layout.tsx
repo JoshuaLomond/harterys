@@ -7,12 +7,16 @@ import "./globals.css";
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair-display",
+  display: "swap",
+  preload: false,
 });
 
 const lato = Lato({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-lato",
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {

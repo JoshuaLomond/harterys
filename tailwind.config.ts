@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Lato", "sans-serif"],
-        serif: ["Playfair Display", "serif"],
+        sans: ["var(--font-lato)"],
+        serif: ["var(--font-playfair-display)"],
       },
       colors: {
         primary: "#A72608",
