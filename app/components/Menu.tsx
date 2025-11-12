@@ -1,7 +1,6 @@
 import Image from "next/image";
 import ScrollAnimation from "./ScrollAnimation";
 import FullMenu from "./menus/FullMenu";
-import BreakfastMenu from "./menus/BreakfastMenu";
 
 export default function Menu() {
   return (
@@ -57,9 +56,6 @@ export default function Menu() {
               </div>
             </article>
           </div>
-        </ScrollAnimation>
-        <ScrollAnimation>
-          <BreakfastMenu />
         </ScrollAnimation>
         <ScrollAnimation>
           <FullMenu />
