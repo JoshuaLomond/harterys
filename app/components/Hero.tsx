@@ -2,25 +2,34 @@ import ScrollAnimation from "./ScrollAnimation";
 
 export default function Hero() {
   return (
-    <div
-      className="relative h-screen bg-cover bg-center"
-      style={{ backgroundImage: "url('/hero-background.jpg')" }}
-    >
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+    <div className="relative h-screen w-full overflow-hidden">
+      {/* Background Image with Parallax Effect */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+        style={{ backgroundImage: "url('/hero-background.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/40"></div>
+      </div>
+
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-6xl font-serif">
-          Welcome to Hartery&apos;s
-        </h1>
-        <p className="mt-8 text-lg leading-8">
-          A family-owned restaurant in Stephenville, NL. Proudly serving
-          traditional Newfie meals alongside classic home-style dishes.
-        </p>
+        <ScrollAnimation>
+          <h1 className="text-5xl font-bold tracking-tight sm:text-7xl font-serif mb-6 drop-shadow-lg">
+            Welcome to Hartery&apos;s
+          </h1>
+        </ScrollAnimation>
+
+        <ScrollAnimation>
+          <p className="mt-4 text-xl leading-8 max-w-2xl mx-auto font-light drop-shadow-md">
+            A family-owned restaurant in Stephenville, NL. Proudly serving
+            traditional Newfie meals alongside classic home-style dishes.
+          </p>
+        </ScrollAnimation>
 
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <ScrollAnimation>
             <a
               href="#menu"
-              className="rounded-md bg-primary px-3-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-transform hover:scale-105 inline-block"
+              className="rounded-full bg-primary px-8 py-3.5 text-base font-semibold text-white shadow-lg hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all hover:scale-105 inline-block border-2 border-transparent hover:border-white/20"
             >
               View Menu
             </a>
@@ -28,12 +37,32 @@ export default function Hero() {
           <ScrollAnimation>
             <a
               href="#contact"
-              className="text-sm font-semibold leading-6 transition-transform hover:scale-105 inline-block"
+              className="text-base font-semibold leading-6 text-white transition-transform hover:scale-105 inline-block border-b-2 border-transparent hover:border-white pb-1"
             >
               Get in Touch <span aria-hidden="true">→</span>
             </a>
           </ScrollAnimation>
         </div>
+      </div>
+
+      {/* Scroll Down Indicator */}
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white">
+        <a href="#menu" aria-label="Scroll down">
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
+        </a>
       </div>
     </div>
   );

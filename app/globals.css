@@ -5,6 +5,11 @@ html {
 }
 
 body {
-  background-color: #f5f5dc; /* secondary color */
-  color: #333333; /* dark-charcoal */
+  background-color: #fafafa; /* off-white base */
+  color: #1a1a1a; /* dark-charcoal */
+}
+
+::selection {
+  background-color: #8b0000;
+  color: white;
 }

@@ -9,7 +9,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
+      const isScrolled = window.scrollY > 20;
       if (isScrolled !== scrolled) {
         setScrolled(isScrolled);
       }
@@ -23,14 +23,14 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-in-out ${
         scrolled
-          ? "bg-white shadow-md text-gray-900"
-          : "bg-transparent text-white"
+          ? "bg-white/90 backdrop-blur-md shadow-lg py-2"
+          : "bg-transparent py-6"
       }`}
     >
       <nav
-        className="flex items-center justify-between p-6 lg:px-8"
+        className="flex items-center justify-between px-6 lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
@@ -39,13 +39,17 @@ export default function Header() {
             className="-m-1.5 p-1.5 transition-transform hover:scale-105"
           >
             <span className="sr-only">Hartery&apos;s</span>
-            <h1 className="font-serif text-2xl">Hartery&apos;s</h1>
+            <h1
+              className={`font-serif text-3xl font-bold tracking-tight ${scrolled ? "text-primary" : "text-white"}`}
+            >
+              Hartery&apos;s
+            </h1>
           </a>
         </div>
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
+            className={`-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 ${scrolled ? "text-dark-charcoal" : "text-white"}`}
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
@@ -53,24 +57,19 @@ export default function Header() {
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          <a
-            href="#menu"
-            className="text-sm font-semibold leading-6 hover:text-primary transition-transform hover:scale-105"
-          >
-            Menu
-          </a>
-          <a
-            href="#about"
-            className="text-sm font-semibold leading-6 hover:text-primary transition-transform hover:scale-105"
-          >
-            About
-          </a>
-          <a
-            href="#contact"
-            className="text-sm font-semibold leading-6 hover:text-primary transition-transform hover:scale-105"
-          >
-            Contact
-          </a>
+          {["Menu", "About", "Contact"].map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className={`text-sm font-semibold leading-6 transition-all duration-300 hover:scale-105 ${
+                scrolled
+                  ? "text-dark-charcoal hover:text-primary"
+                  : "text-white hover:text-secondary"
+              }`}
+            >
+              {item}
+            </a>
+          ))}
         </div>
       </nav>
       {mobileMenuOpen && (
@@ -80,7 +79,7 @@ export default function Header() {
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Hartery&apos;s</span>
-                <h1 className="font-serif text-2xl text-gray-900">
+                <h1 className="font-serif text-2xl font-bold text-primary">
                   Hartery&apos;s
                 </h1>
               </a>
@@ -96,27 +95,16 @@ export default function Header() {
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
-                  <a
-                    href="#menu"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Menu
-                  </a>
-                  <a
-                    href="#about"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    About
-                  </a>
-                  <a
-                    href="#contact"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Contact
-                  </a>
+                  {["Menu", "About", "Contact"].map((item) => (
+                    <a
+                      key={item}
+                      href={`#${item.toLowerCase()}`}
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hover:text-primary transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item}
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
