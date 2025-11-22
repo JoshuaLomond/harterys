@@ -31,7 +31,7 @@ export default function Contact() {
                 href="https://maps.app.goo.gl/3f85xCmit8WJVfoY6"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-primary text-center transition-colors"
+                className="text-gray-600 hover:text-primary text-center transition-colors underline decoration-primary/50 hover:decoration-primary font-medium"
               >
                 109 Main Street
                 <br />
@@ -80,7 +80,7 @@ export default function Contact() {
                 href="https://www.facebook.com/harterysfamilyrestaurant/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-primary text-center transition-colors"
+                className="text-gray-600 hover:text-primary text-center transition-colors underline decoration-primary/50 hover:decoration-primary font-medium"
               >
                 Hartery&apos;s Facebook
               </a>
