@@ -16,7 +16,17 @@ export default function Menu() {
               Explore our diverse menu, featuring a delightful array of classic
               home-style dishes and traditional Newfoundland favorites. From
               hearty breakfasts to satisfying main courses and delectable
-              desserts, there&apos;s something to please every palate.
+              desserts, there&apos;s something to please every palate. Check out
+              our{" "}
+              <a
+                href="https://www.facebook.com/harterysfamilyrestaurant/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary/80 underline font-semibold transition-colors"
+              >
+                Facebook page
+              </a>{" "}
+              for daily specials!
             </p>
           </div>
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-3">

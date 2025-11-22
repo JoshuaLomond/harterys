@@ -43,6 +43,18 @@ export default function Hero() {
             </a>
           </ScrollAnimation>
         </div>
+
+        <ScrollAnimation>
+          <a
+            href="https://www.facebook.com/harterysfamilyrestaurant/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-block text-sm font-medium text-white/90 hover:text-white underline decoration-white/50 hover:decoration-white transition-all hover:scale-105"
+          >
+            Check out our Facebook page for daily specials and upcoming events!{" "}
+            <span aria-hidden="true">→</span>
+          </a>
+        </ScrollAnimation>
       </div>
 
       {/* Scroll Down Indicator */}
