@@ -12,8 +12,9 @@ export default function Contact() {
             </h2>
             <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-8"></div>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Give us a call to make a reservation. We would love to hear from
-              you!
+              Reach out to make a reservation or get more information. Also,
+              check out our Facebook page for daily specials and updates on any
+              special events. We would love to hear from you!
             </p>
           </div>
         </ScrollAnimation>
@@ -48,7 +49,12 @@ export default function Contact() {
               <h3 className="text-xl font-bold text-dark-charcoal mb-2">
                 Call Us
               </h3>
-              <p className="text-gray-600 text-center">(709) 643-6282</p>
+              <a
+                href="tel:7096436282"
+                className="text-gray-600 hover:text-primary text-center transition-colors underline decoration-primary/50 hover:decoration-primary font-medium"
+              >
+                (709) 643-6282
+              </a>
             </div>
           </ScrollAnimation>
 
