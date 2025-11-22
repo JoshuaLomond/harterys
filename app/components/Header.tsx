@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -73,47 +74,65 @@ export default function Header() {
           ))}
         </div>
       </nav>
-      {mobileMenuOpen &&
-        createPortal(
-          <div className="lg:hidden">
-            <div className="fixed inset-0 z-50" />
-            <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-              <div className="flex items-center justify-between">
-                <a href="#" className="-m-1.5 p-1.5">
-                  <span className="sr-only">Hartery&apos;s</span>
-                  <h1 className="font-serif text-2xl font-bold text-primary">
-                    Hartery&apos;s
-                  </h1>
-                </a>
-                <button
-                  type="button"
-                  className="-m-2.5 rounded-md p-2.5 text-gray-700"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <span className="sr-only">Close menu</span>
-                  <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
-              </div>
-              <div className="mt-6 flow-root">
-                <div className="-my-6 divide-y divide-gray-500/10">
-                  <div className="space-y-2 py-6">
-                    {["Menu", "About", "Contact"].map((item) => (
-                      <a
-                        key={item}
-                        href={`#${item.toLowerCase()}`}
-                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hover:text-primary transition-colors"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {item}
-                      </a>
-                    ))}
+      {createPortal(
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <div className="lg:hidden">
+              {/* Backdrop with fade-in animation */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="fixed inset-0 z-50 bg-black/20 backdrop-blur-sm"
+                onClick={() => setMobileMenuOpen(false)}
+              />
+              {/* Menu panel with slide-in animation */}
+              <motion.div
+                initial={{ x: "100%", opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: "100%", opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+              >
+                <div className="flex items-center justify-between">
+                  <a href="#" className="-m-1.5 p-1.5">
+                    <span className="sr-only">Hartery&apos;s</span>
+                    <h1 className="font-serif text-2xl font-bold text-primary">
+                      Hartery&apos;s
+                    </h1>
+                  </a>
+                  <button
+                    type="button"
+                    className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span className="sr-only">Close menu</span>
+                    <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                  </button>
+                </div>
+                <div className="mt-6 flow-root">
+                  <div className="-my-6 divide-y divide-gray-500/10">
+                    <div className="space-y-2 py-6">
+                      {["Menu", "About", "Contact"].map((item) => (
+                        <a
+                          key={item}
+                          href={`#${item.toLowerCase()}`}
+                          className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hover:text-primary transition-colors"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {item}
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>,
-          document.body
-        )}
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </header>
   );
 }
